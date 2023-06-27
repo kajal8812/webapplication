@@ -11,18 +11,25 @@ public class ToDoService {
 
 	private static List<ToDo> l = new ArrayList<>();
 
+	private static int c = 0;
+
 	static {
-		l.add(new ToDo(1, "ravi", "learn spring", LocalDate.now().plusYears(1), false));
-		l.add(new ToDo(2, "rakul", "learn springboot", LocalDate.now().plusYears(2), false));
-		l.add(new ToDo(3, "bhatt", "learn springmvc", LocalDate.now().plusYears(3), false));
+		l.add(new ToDo(++c, "ravi", "learn spring", LocalDate.now().plusYears(1), false));
+		l.add(new ToDo(++c, "ravi", "learn springboot", LocalDate.now().plusYears(2), false));
+		l.add(new ToDo(++c, "ravi", "learn springmvc", LocalDate.now().plusYears(3), false));
 	}
 
 	//public List<ToDo> findByUsername(String username) {
 	//	return l;
 	//}
 
-	public List<ToDo> findByUsername(String username) {
+	public List<ToDo> findByUsername() {
 		// TODO Auto-generated method stub
 		return l;
+	}
+
+	public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
+		ToDo t = new ToDo(++c, username, description, targetDate, done);
+		l.add(t);
 	}
 }
