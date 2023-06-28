@@ -14,7 +14,7 @@ public class ToDoService {
 	private static int c = 0;
 
 	static {
-		l.add(new ToDo(++c, "ravi", "learn spring", LocalDate.now().plusYears(1), false));
+		l.add(new ToDo(++c, "ravi", "learn springs", LocalDate.now().plusYears(1), false));
 		l.add(new ToDo(++c, "ravi", "learn springboot", LocalDate.now().plusYears(2), false));
 		l.add(new ToDo(++c, "ravi", "learn springmvc", LocalDate.now().plusYears(3), false));
 	}

@@ -22,15 +22,15 @@ public class ToDoController {
 
 	@RequestMapping("/list")
 	public String list(ModelMap m) {
-		List<ToDo> l = ts.findByUsername();
-		m.addAttribute("todos", l);
+		List<ToDo> l1 = ts.findByUsername();
+		m.addAttribute("todos", l1);
 		return "listTodos";
 	}
 
 	@RequestMapping(value = "/add-todo", method = RequestMethod.GET)
 	public String newTodo(ModelMap m) {
 		String username = (String) m.get("name");
-		ToDo t1 = new ToDo(0, username, "", LocalDate.now().plusYears(1), false);
+		ToDo t1 = new ToDo(1, username, "", LocalDate.now().plusYears(1), false);
 		m.put("t", t1);
 		return "addTodo";
 	}
@@ -44,3 +44,8 @@ public class ToDoController {
 		return "redirect:list";
 	}
 }
+
+/*
+//		
+//		m.put("t", t1);
+*/

@@ -2,9 +2,13 @@ package com.learning.springboot.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+//import jakarta.validation.constraints.Size;
+
 public class ToDo {
 	private int id;
 	private String username;
+
+	//@Size(min=10,message="Enter atleast 10 characters")
 	private String description;
 	private LocalDate target;
 	private boolean done;
